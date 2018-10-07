@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>for</title>
+	<meta charset="utf-8">
+	<style>
+		#back1{width:1500px; height:1000px; position: absolute;}
+		#pumpkin{width:100px; margin-top: 700px; position: absolute; border-radius: 50%; animation: drop 10s infinite; animation-direction: alternate; }
+		#pumpkin2{width:200px; margin-top: 750px; margin-left: 300px; position: absolute; border-radius: 50%; animation: but 5s infinite; animation-direction: alternate; }
+		#witch{width:450px; margin-top: 150px; position: absolute; animation-name: a; animation-delay: 1.5s; animation-duration: 5s; animation-direction: alternate; animation-iteration-count: infinite;}
+		#bat{width:100px; position: absolute; position: absolute; animation-name: b; animation-duration: 5s;  animation-fill-mode: forwards; }
+		#tv {width:450px; position: absolute; margin-top: 450px; margin-left: 550px;}
+		#noise{width:300px; height:230px; position: absolute; margin-top: 480px; margin-left: 580px;}
+		#ske{width:300px; height:230px; position: absolute; margin-top: 480px; margin-left: 580px; animation-play-state: paused;}
+
+		@keyframes drop{
+			from{margin-left:50px;}
+			to	{margin-left:500px;
+			transform: rotate3D(0,0,360,360deg);}
+		} 
+
+		@keyframes but{
+			from{margin-left:300px;}
+			to	{margin-left:500px;
+			transform: rotate3D(0,0,360,360deg);}
+		}
+
+		@keyframes a{
+			from{margin-left:50px;}
+			to {margin-left:1500px;}
+			 0%   {margin-top:50px;}
+    		15%  {margin-top:200px;}
+    		50%  {margin-top:30px;}
+    		100% {margin-top:250px;}
+		}
+
+		@keyframes b{
+			from{margin-left:800px; margin-top: 250px;}
+			to {margin-left:100px; margin-top: 0px;
+				transform: rotate3D(0,360,0,360deg);}
+		 	0% {opacity: 100%;}
+		 	100%{opacity: 0%;}
+		 	0% {width: : 100%;}
+		 	100%{width: 0%;}
+
+
+		}
+
+
+	</style>
+</head>
+<body>
+		<audio id="music">
+		<source src="night.mp3" type="audio/mpeg">
+		</audio>
+		<audio id="tvnoise">
+		<source src="tvnoise.mp3" type="audio/mpeg">
+		</audio>
+
+		<img src="./img/halloween.jpg" id="back1">
+		<img src="./img/ske.gif" id="ske">
+		<img src="./img/noise.gif" id="noise">
+		<img src="./img/tv.png" id="tv">
+		<img src="./img/pum.png" id="pumpkin">
+		<img src="./img/pum.png" id="pumpkin2">
+		<img src="./img/witch.png" id="witch">
+		<img src="./img/bat.png" id="bat">
+		
+		
+
+
+
+	<script type="text/javascript">
+
+	for(var i=0; i<3;i++){
+	var t = document.getElementById("bat");
+	var k = t.cloneNode(true);
+
+	k.style.left = Math.random()*1200 +"px";
+	k.style.top = Math.random()*100 + "px";
+
+	var time = Math.random()
+	k.style.animationDuration = time +"s";
+
+	k.style.width = time * 200 +"px";
+	k.style.height = time * 200 +"px";
+	document.body.appendChild(k);
+	}
+
+	for(var i=0; i<6;i++){
+	var t = document.getElementById("pumpkin");
+	var k = t.cloneNode(true);
+
+	k.style.left = Math.random()*1200 +"px";
+	k.style.top = Math.random()*100 + "px";
+
+	var time = Math.random()
+	k.style.animationDuration = time +"s";
+
+	k.style.width = time * 200 +"px";
+	k.style.height = time * 200 +"px";
+	document.body.appendChild(k);
+	}
+
+	var toggle1 = "off";
+	noise.onclick = function(){
+			if (toggle1 == "off") {
+				ske.style.animationPlayState = "running";
+				ske.style.opacity = "1";
+				toggle1 = "on";
+			}else if (toggle1 == "on") {
+				ske.style.opacity = "0";
+				toggle1 = "off";
+			}
+		}
+
+	var toggle2 = "off";
+	pumpkin2.onclick =function() {
+		if(toggle2 == "off"){
+		pumpkin2.setAttribute("src","./img/candy.png")
+		toggle2	 = "on";
+		}else{
+			pumpkin2.setAttribute("src","./img/pum.png")
+			toggle2 = "off"
+		}
+	}
+
+	var toggle3 = "off";
+	witch.onclick =function() {
+		if(toggle3 == "off"){
+		music.play();
+		toggle3	 = "on";
+		}else{
+		music.pause();
+		toggle3 = "off"
+		}
+	}
+
+	var toggle4 = "off";
+	tv.onclick =function() {
+		if(toggle4 == "off"){
+		tvnoise.play();
+		toggle4	 = "on";
+		}else{
+		tvnoise.pause();
+		toggle4 = "off"
+		}
+	}
+	
+	
+
+	
+</script>
+
+
+</body>
+</html>
