@@ -12,7 +12,7 @@
 		#bat{width:100px; position: absolute; position: absolute; animation-name: b; animation-duration: 5s;  animation-fill-mode: forwards; }
 		#tv {width:450px; position: absolute; margin-top: 450px; margin-left: 550px;}
 		#noise{width:300px; height:230px; position: absolute; margin-top: 480px; margin-left: 580px;}
-		#ske{width:300px; height:230px; position: absolute; margin-top: 480px; margin-left: 580px; animation-play-state: paused;}
+		#ske{width:300px; height:230px; position: absolute; margin-top: 480px; margin-left: 580px;}
 
 		@keyframes drop{
 			from{margin-left:50px;}
@@ -106,14 +106,14 @@
 	var toggle1 = "off";
 	noise.onclick = function(){
 			if (toggle1 == "off") {
-				ske.style.animationPlayState = "running";
-				ske.style.opacity = "1";
+				ske.style.display = "none";
 				toggle1 = "on";
 			}else if (toggle1 == "on") {
-				ske.style.opacity = "0";
+				ske.style.display = "block";
 				toggle1 = "off";
 			}
 		}
+
 
 	var toggle2 = "off";
 	pumpkin2.onclick =function() {
